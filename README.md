@@ -109,13 +109,14 @@ psy-lifespectrum/
 
 ---
 
-## 📜 授权与联系
+## 📜 版权与授权
 
-- **开源协议**：本项目以 [Apache License 2.0](LICENSE) 开源，免费开放。
-- **电子授权书**：如需本项目的电子授权书，请通过下方邮箱联系作者。
-- **联系作者**：**programmingscience@foxmail.com**
+- **版权归属**：本项目全部原创内容的著作权由**作者独有**，依据《保护文学和艺术作品伯尔尼公约》自动受中国及国际（180 余个成员国）版权保护，版权始终归作者，不随授权转移。
+- **开源协议**：以 [Apache License 2.0](LICENSE) 开源授权，人人可免费使用、修改、分发（含商业用途）——**授权使用，不是转让版权**。
+- **纸质授权书**：学校、机构、公司或项目如需正式授权文件（合规备案、采购、资质、成果认定等），由**版权人作者亲笔签署纸质授权书**，可提供纸质原件。
+- **联系作者 / 获取授权书**：**programmingscience@foxmail.com**
 
-详细授权说明见 [docs/AUTHORIZATION.md](docs/AUTHORIZATION.md)。
+完整版权与授权说明见 [docs/AUTHORIZATION.md](docs/AUTHORIZATION.md)。
 
 ---
 
