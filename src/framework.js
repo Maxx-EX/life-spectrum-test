@@ -105,7 +105,7 @@ window.LSM = (function () {
 
   // ---------- 常量 ----------
   var ITEMS_PER_DIM = 10;
-  var MIN_SCORE = 10, MAX_SCORE = 50;
+  var MIN_SCORE = 10, MAX_SCORE = 40;
 
   // ---------- 工具函数 ----------
   function bandOf(v) {
@@ -114,7 +114,7 @@ window.LSM = (function () {
     return { label: '高亮', cls: 'high' };
   }
 
-  // 计分核心：输入作答 {id: 1-5}，输出每维原始分与标准化分
+  // 计分核心：输入作答 {id: 1-4}（每题 4 选项），输出每维原始分与标准化分
   function score(responses) {
     var raw = {}, sum = {}, count = {};
     DIMS.forEach(function (d) { raw[d.key] = 0; sum[d.key] = 0; count[d.key] = 0; });
@@ -122,7 +122,7 @@ window.LSM = (function () {
     LSM_ITEMS.forEach(function (item) {
       var val = responses[item.id];
       if (typeof val !== 'number') return;
-      var scoreVal = item.reverse ? (6 - val) : val;
+      var scoreVal = item.reverse ? (5 - val) : val;
       raw[item.dim] += scoreVal;
       sum[item.dim] += scoreVal;
       count[item.dim] += 1;

@@ -43,7 +43,7 @@ window.LSM_UI = (function () {
     $('qText').textContent = it.text;
     var box = $('qOpts');
     box.innerHTML = '';
-    var labels = ['非常不符合', '较不符合', '中立', '较符合', '非常符合'];
+    var labels = ['非常不符合', '较不符合', '较符合', '非常符合'];
     labels.forEach(function (lab, v) {
       var btn = document.createElement('button');
       btn.className = 'opt' + (state.answers[it.id] === v + 1 ? ' sel' : '');
