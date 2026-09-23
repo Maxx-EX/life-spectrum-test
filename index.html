@@ -78,19 +78,104 @@
   <!-- ============ 模型展示 ============ -->
   <div class="card">
     <h2>生命光谱模型</h2>
-    <p class="sub">四大光谱域 · 12 个维度，构成你独一无二的心理生态位。</p>
+    <p class="sub">四道光谱 · 12 个维度，构成你独一无二的心理生态位。<span style="color:var(--muted)">悬停维度节点可查看说明。</span></p>
     <div class="radar-box">
-      <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="生命光谱模型结构图">
-        <path d="M 320.0 95.0 A 225 225 0 0 1 545.0 320.0" fill="none" stroke="#4dd4ff" stroke-width="14" opacity="0.9"/><text x="426.1" y="213.9" text-anchor="middle" dominant-baseline="middle" fill="#4dd4ff" font-size="16" font-weight="700">认知光谱</text><path d="M 514.9 432.5 A 225 225 0 0 1 207.5 514.9" fill="none" stroke="#ff7b72" stroke-width="14" opacity="0.9"/><text x="358.8" y="464.9" text-anchor="middle" dominant-baseline="middle" fill="#ff7b72" font-size="16" font-weight="700">情绪光谱</text><path d="M 125.1 432.5 A 225 225 0 0 1 125.1 207.5" fill="none" stroke="#3ddc97" stroke-width="14" opacity="0.9"/><text x="170.0" y="320.0" text-anchor="middle" dominant-baseline="middle" fill="#3ddc97" font-size="16" font-weight="700">关系光谱</text><path d="M 207.5 125.1 A 225 225 0 0 1 207.5 125.1" fill="none" stroke="#ffd166" stroke-width="14" opacity="0.9"/><text x="245.0" y="190.1" text-anchor="middle" dominant-baseline="middle" fill="#ffd166" font-size="16" font-weight="700">内在锚定域</text><circle cx="320.0" cy="125.0" r="5" fill="#4dd4ff"/><text x="320.0" y="70.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">认知弹性</text><circle cx="417.5" cy="151.1" r="5" fill="#4dd4ff"/><text x="445.0" y="103.5" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">专注锚定</text><circle cx="488.9" cy="222.5" r="5" fill="#4dd4ff"/><text x="536.5" y="195.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">好奇探索</text><circle cx="515.0" cy="320.0" r="5" fill="#4dd4ff"/><text x="570.0" y="320.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">决策权衡</text><circle cx="488.9" cy="417.5" r="5" fill="#ff7b72"/><text x="536.5" y="445.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">情绪复原</text><circle cx="417.5" cy="488.9" r="5" fill="#ff7b72"/><text x="445.0" y="536.5" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">压力代谢</text><circle cx="320.0" cy="515.0" r="5" fill="#ff7b72"/><text x="320.0" y="570.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">乐观基调</text><circle cx="222.5" cy="488.9" r="5" fill="#ff7b72"/><text x="195.0" y="536.5" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">情绪觉知</text><circle cx="151.1" cy="417.5" r="5" fill="#3ddc97"/><text x="103.5" y="445.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">边界建构</text><circle cx="125.0" cy="320.0" r="5" fill="#3ddc97"/><text x="70.0" y="320.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">社交能量</text><circle cx="151.1" cy="222.5" r="5" fill="#3ddc97"/><text x="103.5" y="195.0" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">共情通道</text><circle cx="222.5" cy="151.1" r="5" fill="#ffd166"/><text x="195.0" y="103.5" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="13">独立自主</text><circle cx="320" cy="320" r="72" fill="#171b2e" stroke="#2a3150" stroke-width="1.5"/><text x="320" y="310" text-anchor="middle" fill="#e8eaf6" font-size="17" font-weight="700">生命光谱</text><text x="320" y="332" text-anchor="middle" fill="#4dd4ff" font-size="14" font-weight="700">LSM-120</text>
-      </svg>
+      <div id="modelSvgWrap" style="position:relative;max-width:620px;margin:0 auto"></div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px">
-      <span class="chip" style="border-color:#4dd4ff">认知光谱</span>
-      <span class="chip" style="border-color:#ff7b72">情绪光谱</span>
-      <span class="chip" style="border-color:#3ddc97">关系光谱</span>
-      <span class="chip" style="border-color:#ffd166">内在锚定域</span>
+    <div id="modelInfo" style="margin-top:6px;min-height:52px;text-align:center;font-size:14px;color:var(--muted)">将鼠标移到上方任一维度光点，查看其含义。</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px">
+      <span class="chip" style="border-color:#4dd4ff;color:#4dd4ff">认知光谱 · 4</span>
+      <span class="chip" style="border-color:#ff7b72;color:#ff7b72">情绪光谱 · 4</span>
+      <span class="chip" style="border-color:#3ddc97;color:#3ddc97">关系光谱 · 3</span>
+      <span class="chip" style="border-color:#ffd166;color:#ffd166">内在锚定域 · 1</span>
     </div>
+    <script>
+    (function () {
+      var DOMS = [
+        { name: '认知光谱', color: '#4dd4ff', dims: [
+          { n: '认知弹性', d: '面对新信息与不同观点时，思维的灵活与开放程度。' },
+          { n: '专注锚定', d: '长时间投入一项任务、抵抗分心与干扰的能力。' },
+          { n: '好奇探索', d: '对未知领域保持探索欲与新鲜感。' },
+          { n: '决策权衡', d: '面对选择时理性权衡、果断而不拖延。' }
+        ]},
+        { name: '情绪光谱', color: '#ff7b72', dims: [
+          { n: '情绪复原', d: '从挫折与负面情绪中恢复的速度。' },
+          { n: '压力代谢', d: '应对压力时身心调节与缓冲的能力。' },
+          { n: '乐观基调', d: '对未来的积极预期与整体心态。' },
+          { n: '情绪觉知', d: '觉察、命名并理解自己情绪的能力。' }
+        ]},
+        { name: '关系光谱', color: '#3ddc97', dims: [
+          { n: '边界建构', d: '在人际关系中维护合理边界的能力。' },
+          { n: '社交能量', d: '在社交中投入并获取能量的倾向。' },
+          { n: '共情通道', d: '感知并回应他人情绪的能力。' }
+        ]},
+        { name: '内在锚定域', color: '#ffd166', dims: [
+          { n: '独立自主', d: '基于内在价值做决定，不随波逐流。' }
+        ]}
+      ];
+      // 摊平为 12 个节点，按域颜色分组、绕环均布
+      var flat = [];
+      DOMS.forEach(function (dm) { dm.dims.forEach(function (dd) { flat.push({ n: dd.n, d: dd.d, c: dm.color, dom: dm.name }); }); });
+
+      var W = 620, H = 620, cx = W / 2, cy = H / 2, R = 200, RL = 236, RO = 268;
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="生命光谱模型结构图">';
+      // 背景
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (RO + 14) + '" fill="#0e1221"/>';
+      // 外圈四色光谱环
+      DOMS.forEach(function (dm, i) {
+        var a0 = (-90 + i * 90) * Math.PI / 180, a1 = a0 + Math.PI / 2;
+        var x0 = cx + RO * Math.cos(a0), y0 = cy + RO * Math.sin(a0);
+        var x1 = cx + RO * Math.cos(a1), y1 = cy + RO * Math.sin(a1);
+        var large = 0;
+        svg += '<path d="M ' + x0.toFixed(1) + ' ' + y0.toFixed(1) + ' A ' + RO + ' ' + RO + ' 0 ' + large + ' 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1) +
+               '" fill="none" stroke="' + dm.color + '" stroke-width="34" opacity="0.16"/>';
+        svg += '<path d="M ' + x0.toFixed(1) + ' ' + y0.toFixed(1) + ' A ' + RO + ' ' + RO + ' 0 ' + large + ' 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1) +
+               '" fill="none" stroke="' + dm.color + '" stroke-width="3" opacity="0.9"/>';
+      });
+      // 中心辅助参考环
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + R + '" fill="none" stroke="#2a3150" stroke-width="1.2" stroke-dasharray="3 6" opacity="0.6"/>';
+      // 节点与放射线
+      flat.forEach(function (nd, i) {
+        var a = (-90 + i * 30) * Math.PI / 180;
+        var nx = cx + R * Math.cos(a), ny = cy + R * Math.sin(a);
+        var lx = cx + RL * Math.cos(a), ly = cy + RL * Math.sin(a);
+        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + nx.toFixed(1) + '" y2="' + ny.toFixed(1) + '" stroke="#2a3150" stroke-width="1" opacity="0.5"/>';
+        svg += '<g class="lsm-node" data-n="' + nd.n + '" data-d="' + nd.d + '" data-dom="' + nd.dom + '" data-c="' + nd.c + '" style="cursor:pointer">';
+        svg += '<circle cx="' + nx.toFixed(1) + '" cy="' + ny.toFixed(1) + '" r="11" fill="#0e1221" stroke="' + nd.c + '" stroke-width="2"/>';
+        svg += '<circle cx="' + nx.toFixed(1) + '" cy="' + ny.toFixed(1) + '" r="4.5" fill="' + nd.c + '"/>';
+        svg += '</g>';
+        svg += '<text x="' + lx.toFixed(1) + '" y="' + ly.toFixed(1) + '" text-anchor="middle" dominant-baseline="middle" fill="#e8eaf6" font-size="14">' + nd.n + '</text>';
+      });
+      // 中心核心
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="78" fill="#171b2e" stroke="#2a3150" stroke-width="1.5"/>';
+      svg += '<text x="' + cx + '" y="' + (cy - 6) + '" text-anchor="middle" fill="#e8eaf6" font-size="18" font-weight="700">生命光谱</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 22) + '" text-anchor="middle" fill="#4dd4ff" font-size="15" font-weight="700">LSM-120</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 44) + '" text-anchor="middle" fill="#9aa0c0" font-size="11">12 维度 · 120 题</text>';
+      svg += '</svg>';
+
+      document.getElementById('modelSvgWrap').innerHTML = svg;
+
+      // 交互：悬停显示维度说明
+      var info = document.getElementById('modelInfo');
+      var nodes = document.querySelectorAll('.lsm-node');
+      Array.prototype.forEach.call(nodes, function (g) {
+        var name = g.getAttribute('data-n'), desc = g.getAttribute('data-d'), dom = g.getAttribute('data-dom'), col = g.getAttribute('data-c');
+        g.addEventListener('mouseenter', function () {
+          info.innerHTML = '<span style="color:' + col + ';font-weight:700">' + name + '</span>　<span style="color:var(--muted)">' + dom + '</span><br><span style="color:var(--text)">' + desc + '</span>';
+          var c = g.querySelectorAll('circle')[0];
+          c.setAttribute('stroke-width', '4');
+        });
+        g.addEventListener('mouseleave', function () {
+          info.innerHTML = '将鼠标移到上方任一维度光点，查看其含义。';
+          var c = g.querySelectorAll('circle')[0];
+          c.setAttribute('stroke-width', '2');
+        });
+        g.addEventListener('focus', function () { g.dispatchEvent(new Event('mouseenter')); });
+      });
+    })();
+    </script>
   </div>
+
 
   <!-- ============ 获取 ============ -->
   <div class="card" style="text-align:center">
